@@ -58,6 +58,7 @@ export default defineConfig({
     }
   ],
   server: {
+    allowedHosts: true,
     preTransformRequests: true,
     warmup: {
       clientFiles: warmupClientFiles,
