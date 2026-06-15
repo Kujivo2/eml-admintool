@@ -28,7 +28,7 @@
     "@codemirror/state": "^6.6.0",
     "@codemirror/view": "^6.41.0",
     "@prisma/adapter-pg": "^7.7.0",
-    "@prisma/client": "^7.7.0",
+    "@prisma/client": "^7.8.0",
     "bcrypt": "^6.0.0",
     "buffer": "^6.0.3",
     "chart.js": "^4.5.1",
