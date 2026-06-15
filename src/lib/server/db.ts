@@ -1,12 +1,9 @@
-import pkg from '@prisma/client'
-const { PrismaClient } = pkg
-
+import { PrismaClient } from '@prisma/client'
 import { Pool } from 'pg'
 import { PrismaPg } from '@prisma/adapter-pg'
 import { config } from 'dotenv'
 
 config()
-
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient }
 
 const createPrismaClient = () => {
@@ -16,9 +13,7 @@ const createPrismaClient = () => {
   return new PrismaClient({ adapter })
 }
 
-export const db: PrismaClient =
-  globalForPrisma.prisma ?? createPrismaClient()
+export const db: PrismaClient = globalForPrisma.prisma ?? createPrismaClient()
 
-if (process.env.NODE_ENV !== 'production') {
-  globalForPrisma.prisma = db
-}
+if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = db
+
